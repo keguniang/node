@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function get(url, callback) {
+        // 1、创建异步对象
+        var xhr = new XMLHttpRequest();
+        // 2、设置请求行
+        xhr.open('get', url);
+        // 3、注册状态响应函数
+        xhr.onreadystatechange = function () {
+            // readyState中的s是大写
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                callback(xhr.responseText);
+            }
+        };
+        // 4、发送请求主体
+        xhr.send();
+    }
+
+    get('data.json', function (res) {
+        console.log(res);
+    });
+</script>

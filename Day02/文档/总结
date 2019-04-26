@@ -1,0 +1,10 @@
+1、index.html
+2、开放public目录中的静态资源
+    当请求/public/xxx的时候，读取响应public目录的具体资源
+3、/post post.html
+4、 /pinglun
+    4.1 接受表单提交的数据
+    4.2 存储表单提交的数据
+    4.3 让表单重定向到 /
+        statusCode 
+        setHeader  location
